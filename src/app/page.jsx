@@ -68,7 +68,7 @@ const features = [
   },
   {
     icon: <FaRegCheckCircle size={32} className="" />,
-    title: "100% Results",
+    title: "98% Results",
   },
   {
     icon: <FaStopwatch size={32} className="" />,
