@@ -61,17 +61,17 @@ export default function Page() {
     {
       value: "1000+",
       label: "Surgical Procedures",
-      icon: <Image src={'/hero/banner1.png'} alt="" width={80} height={80}/>,
+      icon: <Image src={'/hero/banner3.png'} alt="" width={80} height={80}/>,
     },
     {
       value: "8",
       label: "Years Of Exprience",
-      icon: <Image src={'/hero/banner2.png'} alt="" width={80} height={80}/>,
+      icon: <Image src={'/hero/banner1.png'} alt="" width={80} height={80}/>,
     },
     {
       value: "98%",
       label: "Happy Patients",
-      icon: <Image src={'/hero/banner3.png'} alt="" width={80} height={80}/>,
+      icon: <Image src={'/hero/banner2.png'} alt="" width={80} height={80}/>,
     },
     {
       value: "",
