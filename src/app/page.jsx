@@ -151,56 +151,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
-        <div className="w-full lg:w-1/2">
-          <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">
-            Get in Touch
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Contact Us To Get Better Information
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-700">
-            Reach out to us! We're here to provide you with comprehensive
-            details and answer your questions. Contact us today for personalized
-            assistance and enhanced understanding.
-          </p>
-        </div>
-        <div className="w-full max-w-md p-6 bg-white rounded-xl shadow-lg">
-          <h3 className="text-2xl font-bold text-center mb-6">
-            Book Your Appointment Today
-          </h3>
-          <form className="space-y-4">
-            {[FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt].map((Icon, idx) => (
-              <div key={idx} className="relative">
-                <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
-                <input
-                  type={["text", "email", "tel", "text"][idx]}
-                  placeholder={
-                    ["Full Name", "Email Address", "Phone No", "Your Location"][
-                      idx
-                    ]
-                  }
-                  className="w-full pl-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                />
-              </div>
-            ))}
-            <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
-              <option value="">Looking For</option>
-              <option value="consultation">Consultation</option>
-              <option value="treatment">Treatment</option>
-              <option value="followup">Follow-up</option>
-            </select>
-            <button
-              type="submit"
-              className="w-full bg-[#1AAEBC] text-white hover:bg-[#148d98] py-2 rounded-lg transition font-bold"
-            >
-              BOOK NOW
-            </button>
-          </form>
-        </div>
-      </section>
-
       {/* About Doctor */}
       <section className="bg-white px-4 py-16">
         <div className="flex flex-col lg:flex-row items-start justify-center gap-12 max-w-6xl mx-auto">
@@ -278,6 +228,58 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Booking Section */}
+      <section className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
+        <div className="w-full lg:w-1/2">
+          <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">
+            Get in Touch
+          </h1>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Contact Us To Get Better Information
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Reach out to us! We're here to provide you with comprehensive
+            details and answer your questions. Contact us today for personalized
+            assistance and enhanced understanding.
+          </p>
+        </div>
+        <div className="w-full max-w-md p-6 bg-white rounded-xl shadow-lg">
+          <h3 className="text-2xl font-bold text-center mb-6">
+            Book Your Appointment Today
+          </h3>
+          <form className="space-y-4">
+            {[FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt].map((Icon, idx) => (
+              <div key={idx} className="relative">
+                <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
+                <input
+                  type={["text", "email", "tel", "text"][idx]}
+                  placeholder={
+                    ["Full Name", "Email Address", "Phone No", "Your Location"][
+                      idx
+                    ]
+                  }
+                  className="w-full pl-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+            ))}
+            <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              <option value="">Looking For</option>
+              <option value="consultation">Consultation</option>
+              <option value="treatment">Treatment</option>
+              <option value="followup">Follow-up</option>
+            </select>
+            <button
+              type="submit"
+              className="w-full bg-[#1AAEBC] text-white hover:bg-[#148d98] py-2 rounded-lg transition font-bold"
+            >
+              BOOK NOW
+            </button>
+          </form>
+        </div>
+      </section>
+
+      
 
       {/* ⏱ Popup Modal CTA */}
       {show && (
