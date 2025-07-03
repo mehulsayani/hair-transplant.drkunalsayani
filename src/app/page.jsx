@@ -123,7 +123,7 @@ export default function Page() {
           </div>
           <div className="w-full max-w-sm">
             <Image
-              src="/hair-transplant.png"
+              src="/hero/hair-transplant.png"
               alt="Hair Transplant"
               width={400}
               height={300}
