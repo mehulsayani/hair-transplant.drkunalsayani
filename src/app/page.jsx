@@ -82,13 +82,13 @@ export default function Page() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <nav className="w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-white shadow-md">
+      <nav className="w-full flex items-center justify-between px-4 sm:px-8 py-1 bg-white shadow-md">
         {/* Logo */}
         <a href="/" className="flex items-center">
           <Image
             src="/hero/logo.png"
             alt="Dr. Kunal Sayani Logo"
-            width={100}
+            width={90}
             height={40}
             priority
             className="max-lg:w-[4rem]"
@@ -113,7 +113,9 @@ export default function Page() {
               Hair Transplant for Ultimate Restoration!
             </h1>
             <p className="text-lg md:text-xl text-gray-900 mb-6">
-              Permanent hair restoration using advanced transplant techniques.
+              Get permanent hair restoration with advanced transplant techniques
+              that ensure natural results, minimal downtime, and long-lasting
+              confidence.
             </p>
             <a href="https://drkunalsayani.com/book-appointment">
               <button className="bg-[#1AAEBC] px-10 py-3 text-white rounded-lg font-semibold hover:bg-[#148d98] transition">
@@ -135,14 +137,14 @@ export default function Page() {
 
       {/* Features */}
       <section className="bg-[#1AAEBC] py-10 px-4 flex justify-center items-center">
-        <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full">
+        <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
           {features.map(({ label, icon, value }, i) => (
             <div
               key={i}
               className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-lg transition text-center"
             >
               {icon}
-              <p className="font-semibold text-4xl mt-2">{value}</p>
+              <p className="font-thin text-4xl mt-2">{value}</p>
               <p className="font-semibold text-lg mt-2">{label}</p>
             </div>
           ))}
@@ -152,7 +154,9 @@ export default function Page() {
       {/* Booking Section */}
       <section className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
         <div className="w-full lg:w-1/2">
-        <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">Get in Touch</h1>
+          <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">
+            Get in Touch
+          </h1>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Contact Us To Get Better Information
           </h2>
