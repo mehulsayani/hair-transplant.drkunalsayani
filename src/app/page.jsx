@@ -6,11 +6,11 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaUserMd,
-  FaMicroscope,
+  
   FaCheckCircle,
   FaHeartbeat,
 } from "react-icons/fa";
+import { FaUserMd, FaMicroscope, FaRegCheckCircle, FaStopwatch } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -53,32 +53,28 @@ export default function Page() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 10000); // show after 10 seconds
+    const timer = setTimeout(() => setShow(true), 6000); // show after 10 seconds
     return () => clearTimeout(timer);
   }, []);
 
-  const features = [
-    {
-      value: "1000+",
-      label: "Surgical Procedures",
-      icon: <Image src={"/hero/banner3.png"} alt="" width={80} height={80} />,
-    },
-    {
-      value: "8",
-      label: "Years Of Exprience",
-      icon: <Image src={"/hero/banner2.png"} alt="" width={80} height={80} />,
-    },
-    {
-      value: "98%",
-      label: "Happy Patients",
-      icon: <Image src={"/hero/banner1.png"} alt="" width={80} height={80} />,
-    },
-    // {
-    //   value: "",
-    //   label: "Satisfaction rate",
-    //   icon: <Image src={""} alt="" width={80} height={80} />,
-    // },
-  ];
+const features = [
+  {
+    icon: <FaUserMd size={32} className="" />,
+    title: "Certified Surgeon",
+  },
+  {
+    icon: <FaMicroscope size={32} className="" />,
+    title: "Advanced Technology",
+  },
+  {
+    icon: <FaRegCheckCircle size={32} className="" />,
+    title: "100% Results",
+  },
+  {
+    icon: <FaStopwatch size={32} className="" />,
+    title: "Fast Recovery",
+  },
+];
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -136,20 +132,19 @@ export default function Page() {
       </section>
 
       {/* Features */}
-      <section className="bg-[#1AAEBC] py-10 px-4 flex justify-center items-center">
-        <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
-          {features.map(({ label, icon, value }, i) => (
-            <div
-              key={i}
-              className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-lg transition text-center"
-            >
-              {icon}
-              <p className="font-thin text-4xl mt-2">{value}</p>
-              <p className="font-semibold text-lg mt-2">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+   <div className="bg-[#1aaebc] py-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl shadow-md flex flex-col items-center justify-center text-center p-5"
+          >
+            <p className="text-[#1aaebc]">{feature.icon}</p>
+            <p className=" font-semibold mt-2">{feature.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
 
       {/* About Doctor */}
       <section className="bg-white px-4 py-16">
@@ -176,7 +171,7 @@ export default function Page() {
                 "Dr. Kunal Sayani is a Board-Certified Plastic & Aesthetic Surgeon based in Andheri, Mumbai.",
                 "Over 8 years of experience in aesthetic and reconstructive surgery.",
                 "Completed MCh and MS from Grant Medical College & Sir J.J. Hospital, Mumbai.",
-                "Specializes in Liposuction, Tummy Tuck, Rhinoplasty, and Facial Aesthetic Surgeries.",
+                "Specializes in Hair Transplant, Tummy Tuck, Rhinoplasty, and Facial Aesthetic Surgeries.",
                 "Known for delivering natural results with a patient-focused and safety-first approach.",
               ].map((text, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -244,11 +239,11 @@ export default function Page() {
             assistance and enhanced understanding.
           </p>
         </div>
-        <div className="w-full max-w-md p-6 bg-white rounded-xl shadow-lg">
+        <div className="w-full max-w-md p-6 max-lg:px-10 bg-white rounded-xl shadow-lg">
           <h3 className="text-2xl font-bold text-center mb-6">
             Book Your Appointment Today
           </h3>
-          <form className="space-y-4">
+          <form className="space-y-4 ">
             {[FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt].map((Icon, idx) => (
               <div key={idx} className="relative">
                 <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
@@ -316,9 +311,10 @@ export default function Page() {
               )}
               <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1AAEBC]">
                 <option value="">Looking For</option>
-                <option value="consultation">Consultation</option>
-                <option value="treatment">Treatment</option>
-                <option value="followup">Follow-up</option>
+                <option value="Hair Transplant">Hair Transplant</option>
+                <option value="Hair Restoration PRP GFC Exosomes">Hair Restoration PRP GFC Exosomes</option>
+                <option value="Nano fat injection (SVF) for Hair Growth">Nano fat injection (SVF) for Hair Growth</option>
+                 <option value="Other">Other</option>
               </select>
               <button
                 type="submit"
