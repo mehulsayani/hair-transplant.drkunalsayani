@@ -61,23 +61,23 @@ export default function Page() {
     {
       value: "1000+",
       label: "Surgical Procedures",
-      icon: <Image src={'/hero/banner3.png'} alt="" width={80} height={80}/>,
+      icon: <Image src={"/hero/banner3.png"} alt="" width={80} height={80} />,
     },
     {
       value: "8",
       label: "Years Of Exprience",
-      icon: <Image src={'/hero/banner1.png'} alt="" width={80} height={80}/>,
+      icon: <Image src={"/hero/banner2.png"} alt="" width={80} height={80} />,
     },
     {
       value: "98%",
       label: "Happy Patients",
-      icon: <Image src={'/hero/banner2.png'} alt="" width={80} height={80}/>,
+      icon: <Image src={"/hero/banner1.png"} alt="" width={80} height={80} />,
     },
-    {
-      value: "",
-      label: "Satisfaction rate",
-      icon: <Image src={''} alt="" width={80} height={80}/>,
-    },
+    // {
+    //   value: "",
+    //   label: "Satisfaction rate",
+    //   icon: <Image src={""} alt="" width={80} height={80} />,
+    // },
   ];
 
   return (
@@ -91,22 +91,22 @@ export default function Page() {
             width={100}
             height={40}
             priority
+            className="max-lg:w-[4rem]"
           />
         </a>
 
         {/* Right Side */}
         <div className="flex items-center gap-3 sm:gap-5">
-         
           <a
             href="https://drkunalsayani.com/book-appointment"
-            className="bg-[#1aaebc] hover:bg-[#148d98] text-white text-lg font-semibold px-6 py-3 rounded-md transition-colors duration-200"
+            className="bg-[#1aaebc] hover:bg-[#148d98] text-white text-lg font-semibold px-6 py-3 max-lg:px-4 max-lg:py-2 rounded-md transition-colors duration-200"
           >
             Book Appointment
           </a>
         </div>
       </nav>
       {/* Hero Section */}
-      <section className="w-full flex justify-center items-center bg-blue-50 px-4 text-center">
+      <section className="w-full flex justify-center max-lg:pt-5 items-center bg-blue-50 px-4 text-center">
         <div className="w-full flex flex-col lg:flex-row items-center justify-between max-w-[1100px] gap-8">
           <div className="text-left max-w-xl max-lg:text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
@@ -115,7 +115,7 @@ export default function Page() {
             <p className="text-lg md:text-xl text-gray-900 mb-6">
               Permanent hair restoration using advanced transplant techniques.
             </p>
-            <a href="book-appointment">
+            <a href="https://drkunalsayani.com/book-appointment">
               <button className="bg-[#1AAEBC] px-10 py-3 text-white rounded-lg font-semibold hover:bg-[#148d98] transition">
                 Book Now
               </button>
@@ -142,7 +142,7 @@ export default function Page() {
               className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-lg transition text-center"
             >
               {icon}
-              <p className="font-semibold text-2xl mt-2">{value}</p>
+              <p className="font-semibold text-4xl mt-2">{value}</p>
               <p className="font-semibold text-lg mt-2">{label}</p>
             </div>
           ))}
@@ -150,17 +150,16 @@ export default function Page() {
       </section>
 
       {/* Booking Section */}
-      <section className="container mx-auto flex flex-col-reverse lg:flex-row justify-center items-center gap-10 px-4 py-16">
+      <section className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
         <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#10217D]">
-            Hair Transplant for Ultimate Restoration!
+        <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">Get in Touch</h1>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Contact Us To Get Better Information
           </h2>
           <p className="text-lg leading-relaxed text-gray-700">
-            Hair transplant is a surgical technique that restores hair by
-            transplanting follicles from a donor area (usually the back of the
-            head) to areas with thinning or baldness. It offers a permanent
-            solution for hair loss, resulting in natural-looking hair growth and
-            improved confidence. It's safe, effective, and minimally invasive.
+            Reach out to us! We're here to provide you with comprehensive
+            details and answer your questions. Contact us today for personalized
+            assistance and enhanced understanding.
           </p>
         </div>
         <div className="w-full max-w-md p-6 bg-white rounded-xl shadow-lg">
@@ -282,7 +281,7 @@ export default function Page() {
           <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative">
             <button
               onClick={() => setShow(false)}
-              className="absolute top-2 right-3 text-xl font-bold text-gray-600 hover:text-black"
+              className="absolute top-0 right-3 text-4xl font-bold text-gray-600 hover:text-black"
             >
               ×
             </button>
