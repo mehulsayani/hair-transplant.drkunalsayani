@@ -6,17 +6,22 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  
   FaCheckCircle,
   FaHeartbeat,
 } from "react-icons/fa";
-import { FaUserMd, FaMicroscope, FaRegCheckCircle, FaStopwatch } from "react-icons/fa";
+import {
+  FaUserMd,
+  FaMicroscope,
+  FaRegCheckCircle,
+  FaStopwatch,
+} from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FAQSection from "./FAQSection";
 import Testimonials from "./Testimonials";
 import { IoIosHappy } from "react-icons/io";
+import Footer from "./Footer";
 
 export default function Page() {
   const settings = {
@@ -57,24 +62,24 @@ export default function Page() {
     return () => clearTimeout(timer);
   }, []);
 
-const features = [
-  {
-    icon: <FaUserMd size={32} className="" />,
-    title: "Certified Surgeon",
-  },
-  {
-    icon: <FaMicroscope size={32} className="" />,
-    title: "Advanced Technology",
-  },
-  {
-    icon: <FaRegCheckCircle size={32} className="" />,
-    title: "98% Results",
-  },
-  {
-    icon: <FaStopwatch size={32} className="" />,
-    title: "Fast Recovery",
-  },
-];
+  const features = [
+    {
+      icon: <FaUserMd size={32} className="" />,
+      title: "Certified Surgeon",
+    },
+    {
+      icon: <FaMicroscope size={32} className="" />,
+      title: "Advanced Technology",
+    },
+    {
+      icon: <FaRegCheckCircle size={32} className="" />,
+      title: "98% Results",
+    },
+    {
+      icon: <FaStopwatch size={32} className="" />,
+      title: "Fast Recovery",
+    },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -132,19 +137,19 @@ const features = [
       </section>
 
       {/* Features */}
-   <div className="bg-[#1aaebc] py-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl shadow-md flex flex-col items-center justify-center text-center p-5"
-          >
-            <p className="text-[#1aaebc]">{feature.icon}</p>
-            <p className=" font-semibold mt-2">{feature.title}</p>
-          </div>
-        ))}
+      <div className="bg-[#1aaebc] py-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md flex flex-col items-center justify-center text-center p-5"
+            >
+              <p className="text-[#1aaebc]">{feature.icon}</p>
+              <p className=" font-semibold mt-2">{feature.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
 
       {/* About Doctor */}
       <section className="bg-white px-4 py-16">
@@ -274,8 +279,6 @@ const features = [
         </div>
       </section>
 
-      
-
       {/* ⏱ Popup Modal CTA */}
       {show && (
         <div className="fixed inset-0 z-50 bg-[#1aaebc81] bg-opacity-50 flex justify-center items-center px-4">
@@ -312,9 +315,13 @@ const features = [
               <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1AAEBC]">
                 <option value="">Looking For</option>
                 <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Hair Restoration PRP GFC Exosomes">Hair Restoration PRP GFC Exosomes</option>
-                <option value="Nano fat injection (SVF) for Hair Growth">Nano fat injection (SVF) for Hair Growth</option>
-                 <option value="Other">Other</option>
+                <option value="Hair Restoration PRP GFC Exosomes">
+                  Hair Restoration PRP GFC Exosomes
+                </option>
+                <option value="Nano fat injection (SVF) for Hair Growth">
+                  Nano fat injection (SVF) for Hair Growth
+                </option>
+                <option value="Other">Other</option>
               </select>
               <button
                 type="submit"
@@ -328,19 +335,19 @@ const features = [
       )}
       <Testimonials />
       <FAQSection />
-       <div className="w-full h-[300px] md:h-[400px] mt-8 rounded-xl overflow-hidden shadow-lg">
-        
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30152.58286277929!2d72.7589144!3d19.1059122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b70ae5b76aef%3A0xbc36ee7fd47dd276!2sTVAMEVA%20AESTHETICS%20-%20501%2F502%20Sapphire%20Plaza!5e0!3m2!1sen!2sin!4v1720000000000!5m2!1sen!2sin"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="TVAMEVA AESTHETICS Location"
-      ></iframe>
-    </div>
+      <div className="w-full h-[300px] md:h-[400px] mt-8 rounded-xl overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30152.58286277929!2d72.7589144!3d19.1059122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b70ae5b76aef%3A0xbc36ee7fd47dd276!2sTVAMEVA%20AESTHETICS%20-%20501%2F502%20Sapphire%20Plaza!5e0!3m2!1sen!2sin!4v1720000000000!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="TVAMEVA AESTHETICS Location"
+        ></iframe>
+      </div>
+      <Footer />
     </div>
   );
 }
