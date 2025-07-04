@@ -12,10 +12,10 @@ import { MdPhone } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3E3E43] text-white py-10">
-      <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-4 ">
+    <footer className="bg-[#3E3E43] text-white py-10 pb-20">
+      <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-4 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:items-center max-lg:text-center">
         {/* About */}
-        <div>
+        <div className="flex justify-center items-start max-lg:items-center flex-col max-lg:mb-10">
           <a href="https://drkunalsayani.com">
             <Image
               src="/hero/logo.png"
@@ -31,8 +31,8 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div>
-          <h3 className="text-xl font-bold mb-4">LINKS</h3>
+        <div className="max-lg:mb-10">
+          <h3 className="text-xl font-bold mb-4 ">LINKS</h3>
           <ul className="space-y-2 text-base">
             <li>
               <a href="#" className="hover:text-[#1AAEBC]">
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         {/* Address */}
-        <div className="lg:pr-10">
+        <div className="lg:pr-10 max-lg:mb-10">
           <h3 className="text-xl font-bold mb-4">ADDRESS</h3>
           <p className="flex items-start gap-2 text-base">
             <IoMdPin className="mt-1 text-[#1AAEBC] w-10" />
@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col">
           <h3 className="text-xl font-bold mb-4">CONTACT US</h3>
           <div className="flex items-center gap-2 text-base mb-2">
             <FaEnvelope className="text-[#1AAEBC] w-10" />
