@@ -265,9 +265,14 @@ export default function Page() {
             ))}
             <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
               <option value="">Looking For</option>
-              <option value="consultation">Consultation</option>
-              <option value="treatment">Treatment</option>
-              <option value="followup">Follow-up</option>
+                <option value="Hair Transplant">Hair Transplant</option>
+                <option value="Hair Restoration PRP GFC Exosomes">
+                  Hair Restoration PRP GFC Exosomes
+                </option>
+                <option value="Nano fat injection (SVF) for Hair Growth">
+                  Nano fat injection (SVF) for Hair Growth
+                </option>
+                <option value="Other">Other</option>
             </select>
             <button
               type="submit"
