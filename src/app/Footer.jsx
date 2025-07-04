@@ -1,5 +1,11 @@
 "use client";
-import { FaEnvelope, FaPhone, FaYoutube, FaFacebookF, FaInstagram } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaYoutube,
+  FaFacebookF,
+  FaInstagram,
+} from "react-icons/fa";
 import { IoMdPin } from "react-icons/io";
 
 export default function Footer() {
@@ -10,7 +16,7 @@ export default function Footer() {
         <div>
           <img src="/logo.png" alt="Logo" className="w-16 mb-4" />
           <p className="text-sm leading-relaxed">
-            Dr. Umang Kothari is a Plastic Surgeon based in Mumbai and is the Director and Founder of The Hair and Shape Clinic in Malad, Mumbai. This is a dedicated day care centre for Aesthetic procedures.
+            Transform How You Feel Not Just How You Look{" "}
           </p>
         </div>
 
@@ -18,10 +24,26 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold mb-4">LINKS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-yellow-400">Get Costing</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Results</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Our Expert</a></li>
-            <li><a href="#" className="hover:text-yellow-400">FAQ's</a></li>
+            <li>
+              <a href="#" className="hover:text-yellow-400">
+                Get Costing
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-yellow-400">
+                Results
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-yellow-400">
+                Our Expert
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-yellow-400">
+                FAQ's
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -30,7 +52,8 @@ export default function Footer() {
           <h3 className="text-lg font-bold mb-4">ADDRESS</h3>
           <p className="flex items-start gap-2 text-sm">
             <IoMdPin className="mt-1 text-yellow-400" />
-            Lotus Link Square Building, Mitchchowky, Malad West, Mumbai, Maharashtra 400064
+            TVAMEVA AESTHETICS - 501/502 Sapphire Plaza, Dadabhai Road, Swami
+            Vivekananda Rd, Vile Parle West, Mumbai, Maharashtra
           </p>
         </div>
 
@@ -39,16 +62,24 @@ export default function Footer() {
           <h3 className="text-lg font-bold mb-4">CONTACT US</h3>
           <div className="flex items-center gap-2 text-sm mb-2">
             <FaEnvelope className="text-yellow-400" />
-            <a href="mailto:hairnshape@gmail.com">hairnshape@gmail.com</a>
+            <a href="mailto:hairnshape@gmail.com">
+              drkunalsayani.professional@gmail.com
+            </a>
           </div>
           <div className="flex items-center gap-2 text-sm mb-4">
             <FaPhone className="text-yellow-400" />
-            <a href="tel:+917039979232">+91 7039979232</a>
+            <a href="tel:+917039979232">+91-9967267567, 02246056767</a>
           </div>
           <div className="flex gap-4 text-xl">
-            <a href="#"><FaYoutube className="hover:text-yellow-400" /></a>
-            <a href="#"><FaFacebookF className="hover:text-yellow-400" /></a>
-            <a href="#"><FaInstagram className="hover:text-yellow-400" /></a>
+            <a href="#">
+              <FaYoutube className="hover:text-yellow-400" />
+            </a>
+            <a href="#">
+              <FaFacebookF className="hover:text-yellow-400" />
+            </a>
+            <a href="#">
+              <FaInstagram className="hover:text-yellow-400" />
+            </a>
           </div>
         </div>
       </div>
