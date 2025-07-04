@@ -12,7 +12,7 @@ import { MdPhone } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3E3E43] text-white py-10 pb-20">
+    <footer className="bg-[#3E3E43] text-white py-10 max-lg:pb-20">
       <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-4 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:items-center max-lg:text-center">
         {/* About */}
         <div className="flex justify-center items-start max-lg:items-center flex-col max-lg:mb-10">
