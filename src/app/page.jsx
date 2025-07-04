@@ -57,9 +57,12 @@ export default function Page() {
   const images = ["image1", "image2", "image3", "image4"];
   const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 6000); // show after 10 seconds
-    return () => clearTimeout(timer);
+   useEffect(() => {
+    const interval = setInterval(() => {
+      setShow(true);
+    }, 20000); // 20 seconds
+
+    return () => clearInterval(interval); // clean up on unmount
   }, []);
 
   const features = [

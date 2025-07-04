@@ -39,14 +39,10 @@ export default function Footer() {
                 Get Costing
               </a>
             </li>
+
             <li>
               <a href="#" className="hover:text-[#1AAEBC]">
-                Results
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#1AAEBC]">
-                Our Expert
+                About Doctor
               </a>
             </li>
             <li>
@@ -58,13 +54,16 @@ export default function Footer() {
         </div>
 
         {/* Address */}
-        <div className="lg:pr-10 max-lg:mb-10">
+        <div className="lg:pr-10 max-lg:mb-10 max-lg:px-8">
           <h3 className="text-xl font-bold mb-4">ADDRESS</h3>
-          <p className="flex items-start gap-2 text-base">
+          <a
+            href="https://maps.google.com/maps/dir//Dr.KUNAL+SAYANI+TVAMEVA+AESTHETICS+-+501%2F502+Sapphire+Plaza+Dadabhai+road+Swami+Vivekananda+Rd,+Vile+Parle+West+Mumbai,+Maharashtra+400056/@19.1059305,72.8413161,13z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3be7b70ae5b76aef:0xbc36ee7fd47dd276"
+            className="flex items-start gap-2 max-lg:gap-0 text-base"
+          >
             <IoMdPin className="mt-1 text-[#1AAEBC] w-10" />
             TVAMEVA AESTHETICS - 501/502 Sapphire Plaza, Dadabhai Road, Swami
             Vivekananda Rd, Vile Parle West, Mumbai, Maharashtra
-          </p>
+          </a>
         </div>
 
         {/* Contact */}
