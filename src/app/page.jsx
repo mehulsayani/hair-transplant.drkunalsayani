@@ -155,7 +155,7 @@ export default function Page() {
       </div>
 
       {/* About Doctor */}
-      <section className="bg-white px-4 py-16">
+      <section id="about" className="bg-white px-4 py-16">
         <div className="flex flex-col lg:flex-row items-start justify-center gap-12 max-w-6xl mx-auto">
           <div className="w-full lg:w-1/3 text-center">
             <Image
@@ -233,7 +233,7 @@ export default function Page() {
       </section>
 
       {/* Booking Section */}
-      <section className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
+      <section id="costing" className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
         <div className="w-full lg:w-1/2">
           <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">
             Get in Touch

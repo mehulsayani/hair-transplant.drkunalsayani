@@ -11,6 +11,19 @@ import { IoMdPin } from "react-icons/io";
 import { MdPhone } from "react-icons/md";
 
 export default function Footer() {
+    const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = -150; // adjust this based on header height
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition + offset,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <footer className="bg-[#3E3E43] text-white py-10 max-lg:pb-20">
       <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-4 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:items-center max-lg:text-center">
@@ -35,18 +48,21 @@ export default function Footer() {
           <h3 className="text-xl font-bold mb-4 ">LINKS</h3>
           <ul className="space-y-2 text-base">
             <li>
-              <a href="#" className="hover:text-[#1AAEBC]">
+              <a href="#costing"
+              onClick={(e) => handleScroll(e, "costing")} className="hover:text-[#1AAEBC]">
                 Get Costing
               </a>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#1AAEBC]">
+              <a  href="#about"
+              onClick={(e) => handleScroll(e, "about")}className="hover:text-[#1AAEBC]">
                 About Doctor
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#1AAEBC]">
+              <a   href="#faq"
+              onClick={(e) => handleScroll(e, "faq")} className="hover:text-[#1AAEBC]">
                 FAQ's
               </a>
             </li>
