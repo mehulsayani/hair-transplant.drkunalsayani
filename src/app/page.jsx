@@ -29,7 +29,7 @@ export default function Page() {
     infinite: true,
     arrows: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -37,7 +37,7 @@ export default function Page() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
@@ -165,6 +165,23 @@ export default function Page() {
               height={500}
               className="rounded-lg object-cover w-full h-auto"
             />
+             <div className="w-full">
+              <Slider {...settings}>
+                {images.map((img, i) => (
+                  <div key={i} className="px-2">
+                    <div className="bg-white p-2 rounded-lg shadow-md w-26 h-26 max-md:w-24 max-md:h-24 mx-auto hover:scale-105 transition-transform">
+                      <Image
+                        src={`/aboutdoctor/${img}.png`}
+                        alt={`Membership ${i + 1}`}
+                        width={80}
+                        height={60}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
 
           <div className="w-full lg:w-1/2">
@@ -197,34 +214,18 @@ export default function Page() {
         </div>
             </ul>
 
-            <div className="w-full">
-              <Slider {...settings}>
-                {images.map((img, i) => (
-                  <div key={i} className="px-2">
-                    <div className="bg-white p-2 rounded-lg shadow-md w-26 h-26 max-md:w-24 max-md:h-24 mx-auto hover:scale-105 transition-transform">
-                      <Image
-                        src={`/aboutdoctor/${img}.png`}
-                        alt={`Membership ${i + 1}`}
-                        width={80}
-                        height={60}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-            </div>
+           
 
-            {/* <div className="mt-8">
+            <div className="mt-8">
               <h3 className="text-xl font-semibold text-[#10217D] mb-4">
                 Expertise in Hair Transplant
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Hair Transplant", icon: "🩻" },
-                  { label: "Scalp Micropigmentation", icon: "👩‍⚕️" },
-                  { label: "PRP Therapy", icon: "💉" },
-                  { label: "FUE Technique", icon: "🔬" },
+                  { label: "Hair Transplant", icon: "" },
+                  { label: "Scalp Micropigmentation", icon: "" },
+                  { label: "PRP Therapy", icon: "" },
+                  { label: "FUE Technique", icon: "" },
                 ].map((item, i) => (
                   <button
                     key={i}
@@ -235,7 +236,7 @@ export default function Page() {
                   </button>
                 ))}
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
