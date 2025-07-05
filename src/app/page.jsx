@@ -60,9 +60,9 @@ export default function Page() {
    useEffect(() => {
     const interval = setInterval(() => {
       setShow(true);
-    }, 20000); // 20 seconds
+    }, 120000); // 20 seconds
 
-    return () => clearInterval(interval); // clean up on unmount
+    
   }, []);
 
   const features = [
@@ -187,6 +187,14 @@ export default function Page() {
                   <p>{text}</p>
                 </li>
               ))}
+              <div className="flex items-center gap-3 sm:gap-5">
+          <a
+            href="https://www.drkunalsayani.com/about-dr-kunal-sayani"
+            className="bg-[#1aaebc] hover:bg-[#148d98] text-white text-lg font-semibold px-6 py-3 max-lg:px-4 max-lg:py-2 rounded-md transition-colors duration-200"
+          >
+            Read More
+          </a>
+        </div>
             </ul>
 
             <div className="w-full">
