@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="flex justify-center items-start max-lg:items-center flex-col max-lg:mb-10">
           <a href="https://drkunalsayani.com">
             <Image
-              src="/hero/logo.png"
+              src="/hero/logo_footer.png"
               alt="Logo"
               className="w-26 mb-4"
               width={1000}

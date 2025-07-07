@@ -57,12 +57,10 @@ export default function Page() {
   const images = ["image1", "image2", "image3", "image4"];
   const [show, setShow] = useState(false);
 
-   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setShow(true);
     }, 120000); // 20 seconds
-
-    
   }, []);
 
   const features = [
@@ -156,16 +154,25 @@ export default function Page() {
 
       {/* About Doctor */}
       <section id="about" className="bg-white px-4 py-16">
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-12 max-w-6xl mx-auto">
-          <div className="w-full lg:w-1/3 text-center">
-            <Image
-              src="/aboutdoctor/kunal_sayani1.png"
-              alt="Dr. Kunal Sayani"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover w-full h-auto"
-            />
-             <div className="w-full">
+        <div className="flex relative flex-col lg:flex-row items-start justify-center gap-12 max-w-6xl mx-auto">
+          <div className="w-full  lg:w-1/3 text-center">
+            <div className="">
+              <Image
+                src="/hero/about-doctor-logo.png"
+                alt="Logo"
+                className="w-[30rem] mb-4 absolute -left-0 opacity-20"
+                width={1000}
+                height={1000}
+              />
+              <Image
+                src="/aboutdoctor/kunal_sayani1.png"
+                alt="Dr. Kunal Sayani"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover w-full h-auto relative"
+              />
+            </div>
+            <div className="w-full">
               <Slider {...settings}>
                 {images.map((img, i) => (
                   <div key={i} className="px-2">
@@ -205,16 +212,14 @@ export default function Page() {
                 </li>
               ))}
               <div className="flex items-center gap-3 sm:gap-5">
-          <a
-            href="https://www.drkunalsayani.com/about-dr-kunal-sayani"
-            className="bg-[#1aaebc] hover:bg-[#148d98] text-white text-lg font-semibold px-6 py-3 max-lg:px-4 max-lg:py-2 rounded-md transition-colors duration-200"
-          >
-            Read More
-          </a>
-        </div>
+                <a
+                  href="https://www.drkunalsayani.com/about-dr-kunal-sayani"
+                  className="bg-[#1aaebc] hover:bg-[#148d98] text-white text-lg font-semibold px-6 py-3 max-lg:px-4 max-lg:py-2 rounded-md transition-colors duration-200"
+                >
+                  Read More
+                </a>
+              </div>
             </ul>
-
-           
 
             <div className="mt-8">
               <h3 className="text-xl font-semibold text-[#10217D] mb-4">
@@ -222,16 +227,27 @@ export default function Page() {
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Hair Transplant", icon: "" },
-                  { label: "Scalp Micropigmentation", icon: "" },
-                  { label: "PRP Therapy", icon: "" },
-                  { label: "FUE Technique", icon: "" },
+                  { label: "Hair Transplant", icon: "/hero/hair.png" },
+                  {
+                    label: "Scalp Micropigmentation",
+                    icon: "/hero/prp.png",
+                  },
+                  { label: "PRP Therapy", icon: "/hero/hair2.png" },
+                  { label: "FUE Technique", icon: "/hero/syringe.png" },
                 ].map((item, i) => (
                   <button
                     key={i}
-                    className="flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-2 font-medium hover:bg-[#148d9821] transition"
+                    className="flex items-center  gap-2 border border-gray-300 rounded-lg font-medium hover:bg-[#148d9821] transition"
                   >
-                    <span className="text-xl">{item.icon}</span>
+                    <span className="text-xl">
+                      <Image
+                        src={item.icon}
+                        alt=""
+                        width={50}
+                        height={50}
+                        className="bg-blue-50 p-1 rounded-lg"
+                      />
+                    </span>
                     {item.label}
                   </button>
                 ))}
@@ -242,7 +258,10 @@ export default function Page() {
       </section>
 
       {/* Booking Section */}
-      <section id="costing" className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16">
+      <section
+        id="costing"
+        className="container mx-auto flex max-lg:flex-col max-lg:text-center justify-center items-center gap-10 px-4 py-16"
+      >
         <div className="w-full lg:w-1/2">
           <h1 className="text-3xl md:text-xl font-bold mb-4 text-[#10217D]">
             Get in Touch
@@ -277,14 +296,14 @@ export default function Page() {
             ))}
             <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
               <option value="">Looking For</option>
-                <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Hair Restoration PRP GFC Exosomes">
-                  Hair Restoration PRP GFC Exosomes
-                </option>
-                <option value="Nano fat injection (SVF) for Hair Growth">
-                  Nano fat injection (SVF) for Hair Growth
-                </option>
-                <option value="Other">Other</option>
+              <option value="Hair Transplant">Hair Transplant</option>
+              <option value="Hair Restoration PRP GFC Exosomes">
+                Hair Restoration PRP GFC Exosomes
+              </option>
+              <option value="Nano fat injection (SVF) for Hair Growth">
+                Nano fat injection (SVF) for Hair Growth
+              </option>
+              <option value="Other">Other</option>
             </select>
             <button
               type="submit"
