@@ -22,6 +22,7 @@ import FAQSection from "./FAQSection";
 import Testimonials from "./Testimonials";
 import { IoIosHappy } from "react-icons/io";
 import Footer from "./Footer";
+import Knowledge from "./Knowledge";
 
 export default function Page() {
   const settings = {
@@ -369,6 +370,11 @@ export default function Page() {
           </div>
         </div>
       )}
+      <div className="flex items-center justify-center flex-col">
+        <div className="w-full max-w-[1200px] max-lg:w-[90%]">
+        <Knowledge/>
+      </div>
+      </div>
       <Testimonials />
       <FAQSection />
       <div className="w-full h-[300px] md:h-[400px] mt-8 rounded-xl overflow-hidden shadow-lg">
