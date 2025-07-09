@@ -238,7 +238,7 @@ export default function Page() {
                 ].map((item, i) => (
                   <button
                     key={i}
-                    className="flex items-center  gap-2 border border-gray-300 rounded-lg font-medium hover:bg-[#148d9821] transition"
+                    className="flex items-center  gap-2 border pr-2 border-gray-300 rounded-lg font-medium hover:bg-[#148d9821] transition"
                   >
                     <span className="text-xl">
                       <Image
