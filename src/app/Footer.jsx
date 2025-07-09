@@ -88,10 +88,10 @@ export default function Footer() {
           <div className="flex items-center gap-2 text-base mb-2">
             <FaEnvelope className="text-[#1AAEBC] w-10" />
             <a
-              href="mailto:drkunalsayani.professional@gmail.com"
+              href="mailto:contact@drkunalsayani.com"
               className="hover:text-white break-all hover:underline"
             >
-              drkunalsayani.professional@gmail.com
+              contact@drkunalsayani.com
             </a>
           </div>
           <div className="flex items-center gap-2 text-base mb-4">
