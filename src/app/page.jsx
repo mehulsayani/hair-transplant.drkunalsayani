@@ -15,6 +15,8 @@ import {
   FaRegCheckCircle,
   FaStopwatch,
 } from "react-icons/fa";
+import { FaRegThumbsUp } from "react-icons/fa";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -76,11 +78,11 @@ export default function Page() {
     },
     {
       icon: <FaRegCheckCircle size={32} className="" />,
-      title: "98% Results",
+      title: "Top Class Results",
     },
     {
-      icon: <FaStopwatch size={32} className="" />,
-      title: "Fast Recovery",
+      icon: <FaRegThumbsUp size={32} className="" />,
+      title: "Low Transection Rate",
     },
   ];
 
