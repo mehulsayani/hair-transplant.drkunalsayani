@@ -124,6 +124,36 @@ export default function Footer() {
           </div>
         </div>
       </div>
+       {/* Copyright */}
+      <div className="text-center text-gray-300 text-base max-lg:text-xs px-4">
+        © {new Date().getFullYear()}{" "}
+        <a
+          href="https://www.drkunalsayani.com/"
+          className="text-white hover:underline"
+        >
+          drkunalsayani
+        </a>
+        . All rights reserved. Designed & Developed by{" "}
+        <a
+          href="https://pracharkarsolutions.com"
+          className="text-white hover:underline"
+        >
+          pracharkarsolutions
+        </a>
+        {/* Disclaimer Section */}
+        <section className="max-w-5xl text-base max-lg:text-xs mx-auto pt-5 text-white">
+          <p className="mb-2 max-md:mb-8">
+            <span className="text-yellow-400"> Disclaimer:</span> The
+            information in the Web Site is provided for informational purposes
+            only and is not meant to substitute the advice provided by your
+            doctor or other health care professional. You should not use the
+            information available on or through the Web Site for diagnosing or
+            treating a health problem or disease, or prescribing any medication.
+            All images used on this website are for illustrative purposes only,
+            actual results and process may vary.
+          </p>
+        </section>
+      </div>
     </footer>
   );
 }

@@ -85,8 +85,9 @@ export default function Page() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <nav className="w-full flex items-center justify-between px-4 sm:px-8 py-1 bg-white shadow-md">
+    <div className="min-h-screen flex flex-col  ">
+    <div className="flex justify-center items-center fixed w-full bg-white">
+        <nav className="w-full max-w-[1200px] flex items-center justify-between px-4 sm:px-8 py-1 ">
         {/* Logo */}
         <a href="/" className="flex items-center">
           <Image
@@ -102,6 +103,7 @@ export default function Page() {
         {/* Right Side */}
        <BookAppointment/>
       </nav>
+    </div>
       {/* Hero Section */}
       <section className="w-full flex justify-center max-lg:pt-5 items-center bg-blue-50 px-4 py-20 text-center">
         <div className="w-full flex flex-col lg:flex-row items-center justify-between max-w-[1100px] gap-8">
