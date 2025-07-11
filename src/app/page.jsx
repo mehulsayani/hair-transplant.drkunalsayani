@@ -23,6 +23,7 @@ import Testimonials from "./Testimonials";
 import { IoIosHappy } from "react-icons/io";
 import Footer from "./Footer";
 import Knowledge from "./Knowledge";
+import BookAppointment from "./BookAppointment";
 
 export default function Page() {
   const settings = {
@@ -99,17 +100,10 @@ export default function Page() {
         </a>
 
         {/* Right Side */}
-        <div className="flex items-center gap-3 sm:gap-5">
-          <a
-            href="https://drkunalsayani.com/book-appointment"
-            className="bg-[#1aaebc] hover:bg-[#148d98] text-white text-lg font-semibold px-6 py-3 max-lg:px-4 max-lg:py-2 rounded-md transition-colors duration-200"
-          >
-            Book Appointment
-          </a>
-        </div>
+       <BookAppointment/>
       </nav>
       {/* Hero Section */}
-      <section className="w-full flex justify-center max-lg:pt-5 items-center bg-blue-50 px-4 text-center">
+      <section className="w-full flex justify-center max-lg:pt-5 items-center bg-blue-50 px-4 py-20 text-center">
         <div className="w-full flex flex-col lg:flex-row items-center justify-between max-w-[1100px] gap-8">
           <div className="text-left max-w-xl max-lg:text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
@@ -120,18 +114,14 @@ export default function Page() {
               that ensure natural results, minimal downtime, and long-lasting
               confidence.
             </p>
-            <a href="https://drkunalsayani.com/book-appointment">
-              <button className="bg-[#1AAEBC] px-10 py-3 text-white rounded-lg font-semibold hover:bg-[#148d98] transition">
-                Book Now
-              </button>
-            </a>
+            <BookAppointment/>
           </div>
-          <div className="w-full max-w-sm">
+          <div className="">
             <Image
               src="/hero/hair-transplant.png"
               alt="Hair Transplant"
-              width={400}
-              height={300}
+              width={1000}
+              height={1000}
               className="object-cover rounded-xl w-full h-auto"
             />
           </div>
