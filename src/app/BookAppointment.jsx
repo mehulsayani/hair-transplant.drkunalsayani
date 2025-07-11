@@ -18,7 +18,7 @@ export default function BookAppointment() {
       {/* Modal Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-[9999] bg-black bg-opacity-70 flex items-center justify-center"
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center"
           onClick={() => setIsOpen(false)}
         >
           <div
@@ -45,7 +45,7 @@ export default function BookAppointment() {
       )}
 
       {/* Trigger Button */}
-      <div className="relative z-[1000]">
+      <div className="relative">
         <button
           onClick={() => setIsOpen(true)}
           className="bg-[#1aaebc] text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-[#148d98] transition-colors duration-200"

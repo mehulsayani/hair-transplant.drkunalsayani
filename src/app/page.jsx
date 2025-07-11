@@ -88,8 +88,8 @@ export default function Page() {
 
   return (
     <div className="min-h-screen flex flex-col  ">
-    <div className="flex justify-center items-center fixed w-full bg-white">
-        <nav className="w-full max-w-[1200px] flex items-center justify-between px-4 sm:px-8 py-1 ">
+    <div className="flex justify-center items-center fixed z-50 w-full bg-white">
+        <nav className="w-full  max-w-[1200px] flex items-center justify-between px-4 sm:px-8 py-1 ">
         {/* Logo */}
         <a href="/" className="flex items-center">
           <Image
@@ -107,7 +107,7 @@ export default function Page() {
       </nav>
     </div>
       {/* Hero Section */}
-      <section className="w-full flex justify-center max-lg:pt-5 items-center bg-blue-50 px-4 py-20 text-center">
+      <section className="w-full flex justify-center max-lg:pt-28 items-center bg-blue-50 px-4 py-20 pt-38  text-center">
         <div className="w-full flex flex-col lg:flex-row items-center justify-between max-w-[1100px] gap-8">
           <div className="text-left max-w-xl max-lg:text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
