@@ -11,7 +11,7 @@ import { IoMdPin } from "react-icons/io";
 import { MdPhone } from "react-icons/md";
 
 export default function Footer() {
-    const handleScroll = (e, id) => {
+  const handleScroll = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -48,21 +48,30 @@ export default function Footer() {
           <h3 className="text-xl font-bold mb-4 ">LINKS</h3>
           <ul className="space-y-2 text-base">
             <li>
-              <a href="#costing"
-              onClick={(e) => handleScroll(e, "costing")} className="hover:text-[#1AAEBC]">
+              <a
+                href="#costing"
+                onClick={(e) => handleScroll(e, "costing")}
+                className="hover:text-[#1AAEBC]"
+              >
                 Get Costing
               </a>
             </li>
 
             <li>
-              <a  href="#about"
-              onClick={(e) => handleScroll(e, "about")}className="hover:text-[#1AAEBC]">
+              <a
+                href="#about"
+                onClick={(e) => handleScroll(e, "about")}
+                className="hover:text-[#1AAEBC]"
+              >
                 About Doctor
               </a>
             </li>
             <li>
-              <a   href="#faq"
-              onClick={(e) => handleScroll(e, "faq")} className="hover:text-[#1AAEBC]">
+              <a
+                href="#faq"
+                onClick={(e) => handleScroll(e, "faq")}
+                className="hover:text-[#1AAEBC]"
+              >
                 FAQ's
               </a>
             </li>
@@ -86,7 +95,7 @@ export default function Footer() {
         <div className="max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col">
           <h3 className="text-xl font-bold mb-4">CONTACT US</h3>
           <div className="flex items-center gap-2 text-base mb-2">
-            <FaEnvelope className="text-[#1AAEBC] w-10" />
+            <FaEnvelope className="text-[#1AAEBC]" />
             <a
               href="mailto:contact@drkunalsayani.com"
               className="hover:text-white break-all hover:underline"
@@ -124,7 +133,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
-       {/* Copyright */}
+      
+      {/* Divider */}
+      <hr className="w-full my-8 border-gray-600" />
+
+      {/* Copyright */}
       <div className="text-center text-gray-300 text-base max-lg:text-xs px-4">
         © {new Date().getFullYear()}{" "}
         <a

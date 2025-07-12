@@ -1,8 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React, { useState, useEffect, useRef } from "react";
 
 export default function BookAppointment() {
   const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef(null);
 
   // Close modal on ESC key press
   useEffect(() => {
@@ -13,26 +15,41 @@ export default function BookAppointment() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Focus trap when modal opens
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      modalRef.current.focus();
+    }
+  }, [isOpen]);
+
   return (
     <div className="relative">
       {/* Modal Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center"
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9999]"
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="bg-white w-[90%] max-w-3xl h-[80%] rounded-lg overflow-hidden relative shadow-lg animate-fadeIn"
-            onClick={(e) => e.stopPropagation()}
+            ref={modalRef}
+            tabIndex={-1}
+            className="bg-white w-[90%] max-w-3xl h-[80%] rounded-lg overflow-hidden relative shadow-lg animate-fadeIn outline-none"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
           >
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-4 text-4xl text-gray-600 hover:text-gray-900 transition duration-200"
+              className="absolute top-0 right-3 z-50 text-4xl text-gray-600 hover:text-red-600 transition duration-200"
               aria-label="Close modal"
+              title="Close"
             >
               &times;
             </button>
+
+            {/* Modal Title (optional) */}
+            <div className="text-center py-2 text-xl font-semibold border-b text-gray-700">
+              Book an Appointment
+            </div>
 
             {/* Iframe for Booking */}
             <iframe
