@@ -20,7 +20,9 @@ export const metadata = {
     "Best Hair Transplant in Mumbai | Dr. Kunal Sayani – FUE & FUT Specialist",
   description:
     "Looking for the best hair transplant in Mumbai? Dr. Kunal Sayani offers advanced FUE & FUT techniques with natural, permanent results.",
+  googleSiteVerification: "TRM5uN2AbAEpuMZ-oECmvatuvFw9rdvoKtm-UK8NCsI",
 };
+
 
 export default function RootLayout({ children }) {
   return (
@@ -39,6 +41,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'AW-16907003627');
           `}
         </Script>
+       
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
