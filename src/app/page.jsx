@@ -16,6 +16,8 @@ import {
   FaStopwatch,
 } from "react-icons/fa";
 import { FaRegThumbsUp } from "react-icons/fa";
+import { useRouter } from "next/navigation"; // <-- This is for App Router
+
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -28,6 +30,8 @@ import Knowledge from "./Knowledge";
 import BookAppointment from "./BookAppointment";
 
 export default function Page() {
+
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -70,6 +74,7 @@ export default function Page() {
       const data = await res.json();
       if (res.ok) {
         setStatus("Form submitted successfully!");
+        router.push('/thank-you');
         setFormData({
           name: "",
           email: "",
