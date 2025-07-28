@@ -28,6 +28,66 @@ import Knowledge from "./Knowledge";
 import BookAppointment from "./BookAppointment";
 
 export default function Page() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    purpose: "",
+  });
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const iconMap = [FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt];
+  const fieldNames = ["name", "email", "phone", "location"];
+  const placeholders = ["Full Name", "Email Address", "Phone No", "Your Location"];
+  const inputTypes = ["text", "email", "tel", "text"];
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("");
+    setIsSubmitting(true);
+
+    const { name, email, phone, location, purpose } = formData;
+    if (!name || !email || !phone || !location || !purpose) {
+      setStatus("Please fill all fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setStatus("Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          purpose: "",
+        });
+      } else {
+        setStatus(data.message || "Submission failed.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("Error submitting form.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -274,39 +334,50 @@ export default function Page() {
           <h3 className="text-2xl font-bold text-center mb-6">
             Book Your Appointment Today
           </h3>
-          <form className="space-y-4 ">
-            {[FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt].map((Icon, idx) => (
-              <div key={idx} className="relative">
-                <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
-                <input
-                  type={["text", "email", "tel", "text"][idx]}
-                  placeholder={
-                    ["Full Name", "Email Address", "Phone No", "Your Location"][
-                      idx
-                    ]
-                  }
-                  className="w-full pl-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                />
-              </div>
-            ))}
-            <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
-              <option value="">Looking For</option>
-              <option value="Hair Transplant">Hair Transplant</option>
-              <option value="Hair Restoration PRP GFC Exosomes">
-                Hair Restoration PRP GFC Exosomes
-              </option>
-              <option value="Nano fat injection (SVF) for Hair Growth">
-                Nano fat injection (SVF) for Hair Growth
-              </option>
-              <option value="Other">Other</option>
-            </select>
-            <button
-              type="submit"
-              className="w-full bg-[#1AAEBC] text-white hover:bg-[#148d98] py-2 rounded-lg transition font-bold"
-            >
-              BOOK NOW
-            </button>
-          </form>
+        <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md mx-auto">
+      {iconMap.map((Icon, idx) => (
+        <div key={idx} className="relative">
+          <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
+          <input
+            type={inputTypes[idx]}
+            name={fieldNames[idx]}
+            placeholder={placeholders[idx]}
+            value={formData[fieldNames[idx]]}
+            onChange={handleChange}
+            className="w-full pl-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required
+          />
+        </div>
+      ))}
+
+      <select
+        name="purpose"
+        value={formData.purpose}
+        onChange={handleChange}
+        className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        required
+      >
+        <option value="">Looking For</option>
+        <option value="Hair Transplant">Hair Transplant</option>
+        <option value="Hair Restoration PRP GFC Exosomes">Hair Restoration PRP GFC Exosomes</option>
+        <option value="Nano fat injection (SVF) for Hair Growth">Nano fat injection (SVF) for Hair Growth</option>
+        <option value="Other">Other</option>
+      </select>
+
+      {status && (
+        <p className={`text-center ${status.includes("success") ? "text-green-600" : "text-red-600"}`}>
+          {status}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-[#1AAEBC] text-white hover:bg-[#148d98] py-2 rounded-lg transition font-bold"
+      >
+        {isSubmitting ? "Submitting..." : "BOOK NOW"}
+      </button>
+    </form>
         </div>
       </section>
 
@@ -323,44 +394,50 @@ export default function Page() {
             <h2 className="text-2xl font-bold text-[#10217D] text-center mb-6">
               Book Your Appointment Today
             </h2>
-            <form className="space-y-4">
-              {[FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt].map(
-                (Icon, idx) => (
-                  <div key={idx} className="relative">
-                    <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
-                    <input
-                      type={["text", "email", "tel", "text"][idx]}
-                      placeholder={
-                        [
-                          "Full Name",
-                          "Email Address",
-                          "Phone No",
-                          "Your Location",
-                        ][idx]
-                      }
-                      className="w-full pl-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1AAEBC]"
-                    />
-                  </div>
-                )
-              )}
-              <select className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1AAEBC]">
-                <option value="">Looking For</option>
-                <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Hair Restoration PRP GFC Exosomes">
-                  Hair Restoration PRP GFC Exosomes
-                </option>
-                <option value="Nano fat injection (SVF) for Hair Growth">
-                  Nano fat injection (SVF) for Hair Growth
-                </option>
-                <option value="Other">Other</option>
-              </select>
-              <button
-                type="submit"
-                className="w-full bg-[#1AAEBC] text-white py-2 rounded-lg hover:bg-[#148d98] transition font-bold"
-              >
-                SUBMIT
-              </button>
-            </form>
+             <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md mx-auto">
+      {iconMap.map((Icon, idx) => (
+        <div key={idx} className="relative">
+          <Icon className="absolute left-3 top-3 text-[#1AAEBC]" />
+          <input
+            type={inputTypes[idx]}
+            name={fieldNames[idx]}
+            placeholder={placeholders[idx]}
+            value={formData[fieldNames[idx]]}
+            onChange={handleChange}
+            className="w-full pl-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required
+          />
+        </div>
+      ))}
+
+      <select
+        name="purpose"
+        value={formData.purpose}
+        onChange={handleChange}
+        className="w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        required
+      >
+        <option value="">Looking For</option>
+        <option value="Hair Transplant">Hair Transplant</option>
+        <option value="Hair Restoration PRP GFC Exosomes">Hair Restoration PRP GFC Exosomes</option>
+        <option value="Nano fat injection (SVF) for Hair Growth">Nano fat injection (SVF) for Hair Growth</option>
+        <option value="Other">Other</option>
+      </select>
+
+      {status && (
+        <p className={`text-center ${status.includes("success") ? "text-green-600" : "text-red-600"}`}>
+          {status}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-[#1AAEBC] text-white hover:bg-[#148d98] py-2 rounded-lg transition font-bold"
+      >
+        {isSubmitting ? "Submitting..." : "BOOK NOW"}
+      </button>
+    </form>
           </div>
         </div>
       )}
