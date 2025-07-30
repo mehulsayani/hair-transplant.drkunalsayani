@@ -18,6 +18,19 @@ export default function page() {
             gtag('config', 'AW-16907003627');
           `}
         </Script>
+         {/* Google Analytics Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D4QH25NNC5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D4QH25NNC5');
+          `}
+        </Script>
       </head>
       <CheckCircle className="text-green-500 w-16 h-16 mb-4" />
       <h1 className="text-3xl font-bold mb-2">Thank You for Booking!</h1>
