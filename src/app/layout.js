@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ScrollTop from "./ScrollTop";
-import Whatsapp from "./Whatsapp";
-import CTA from "./CTA";
+import ScrollTop from "./components/ScrollTop";
+import Whatsapp from "./components/Whatsapp";
+import CTA from "./components/CTA";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
     >
       <head>
         {/* Google Ads Tag */}
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-16907003627"
           strategy="afterInteractive"
         />
@@ -45,10 +45,10 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'AW-16907003627');
           `}
-        </Script>
+        </Script> */}
 
         {/* Google Analytics Tag */}
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D4QH25NNC5"
           strategy="afterInteractive"
         />
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-D4QH25NNC5');
           `}
-        </Script>
+        </Script> */}
 
         {/* Google Tag Manager */}
         <Script id="gtm-init" strategy="afterInteractive">

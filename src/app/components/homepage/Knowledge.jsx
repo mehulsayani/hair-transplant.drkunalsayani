@@ -19,6 +19,8 @@ const Knowledge = () => {
   }
 
   return (
+     <div className="flex items-center justify-center flex-col">
+            <div className="w-full max-w-[1200px] max-lg:w-[90%]">
     <section>
       <div className="w-full flex flex-col items-center justify-center py-8">
         <div className="flex w-full max-lg:flex-col-reverse gap-10 max-w-[1300px] max-lg:justify-center max-lg:items-center">
@@ -88,6 +90,8 @@ const Knowledge = () => {
         </div>
       </div>
     </section>
+     </div>
+          </div>
   );
 };
 
