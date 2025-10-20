@@ -137,7 +137,7 @@ export default function Contact() {
       >
         <option value="">Looking For</option>
         <option value="Hair Transplant">Hair Transplant</option>
-        <option value="Hair Restoration PRP GFC Exosomes">Hair Restoration PRP GFC Exosomes</option>
+        <option value="Hair Restoration">Hair Restoration</option>
         <option value="Nano fat injection (SVF) for Hair Growth">Nano fat injection (SVF) for Hair Growth</option>
         <option value="Other">Other</option>
       </select>

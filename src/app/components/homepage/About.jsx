@@ -194,11 +194,6 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Hair Transplant", icon: "/hero/hair.png" },
-                  {
-                    label: "Scalp Micropigmentation",
-                    icon: "/hero/prp.png",
-                  },
-                  { label: "PRP Therapy", icon: "/hero/hair2.png" },
                   { label: "FUE Technique", icon: "/hero/syringe.png" },
                 ].map((item, i) => (
                   <button
@@ -262,8 +257,8 @@ export default function About() {
               >
                 <option value="">Looking For</option>
                 <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Hair Restoration PRP GFC Exosomes">
-                  Hair Restoration PRP GFC Exosomes
+                <option value="Hair Restoration">
+                  Hair Restoration
                 </option>
                 <option value="Nano fat injection (SVF) for Hair Growth">
                   Nano fat injection (SVF) for Hair Growth
